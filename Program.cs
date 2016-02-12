@@ -5,20 +5,27 @@ namespace method_and_class
 	class MainClass
 	{
 
-		static void divide(int a, int b, out int quotient, out int remainder)
+		static int sum(params int[] args)
 		{
-			quotient = a / b;
-			remainder = a % b;
+			Console.Write ("Summing...");
+
+			int sum = 0;
+
+			for (int i = 0; i < args.Length; i++) 
+			{
+				if (i > 0)
+					Console.Write (", ");
+				Console.Write (args[i]);
+
+				sum += args [i];
+			}
+			Console.WriteLine ();
+			return sum;
 		}
 
-		public static void Main (string[] args)
+		static void Main (string[] args)
 		{
-			int a = 20;
-			int b = 3;
-			int c;
-			int d;
-			divide (a, b, out c, out d);
-			Console.WriteLine ("a:{0}, b:{1}, a/b:{2}, a%b:{3}", a, b, c, d);
+			Console.WriteLine ("{0}", sum(3, 4, 5, 6, 7, 8, 9, 10));
 		}
 	}
 }
