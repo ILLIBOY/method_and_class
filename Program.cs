@@ -5,23 +5,20 @@ namespace method_and_class
 	class MainClass
 	{
 
-		static void swap(ref int a, ref int b)
+		static void divide(int a, int b, out int quotient, out int remainder)
 		{
-			int temp = b;
-			b = a;
-			a = temp;
+			quotient = a / b;
+			remainder = a % b;
 		}
 
 		public static void Main (string[] args)
 		{
-			int x = 3;
-			int y = 4;
-
-			Console.WriteLine ("x:{0}, y:{1}", x, y);
-
-			swap (ref x, ref y);
-
-			Console.WriteLine ("x:{0}, y:{1}", x, y);
+			int a = 20;
+			int b = 3;
+			int c;
+			int d;
+			divide (a, b, out c, out d);
+			Console.WriteLine ("a:{0}, b:{1}, a/b:{2}, a%b:{3}", a, b, c, d);
 		}
 	}
 }
